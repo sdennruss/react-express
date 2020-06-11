@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Input from "../common/input";
 import { useHistory } from "react-router-dom";
 
-const SignUpForm = ({ account, errors, onChange, onSubmit }) => {
+const SignUpForm = ({ data, errors, onChange, onSubmit }) => {
   let history = useHistory();
   function handleClick() {
-    const { email, name } = account;
+    const { email, name } = data;
     if (email.includes("@") && name) return history.push("/ebook");
   }
 
@@ -17,7 +17,7 @@ const SignUpForm = ({ account, errors, onChange, onSubmit }) => {
           <div className="name-form">
             <Input
               name="name"
-              value={account.name}
+              value={data.name}
               label="Name"
               onChange={onChange}
               placeholder="first and last name"
@@ -26,7 +26,7 @@ const SignUpForm = ({ account, errors, onChange, onSubmit }) => {
           </div>
           <Input
             name="email"
-            value={account.email}
+            value={data.email}
             label="Email Address"
             onChange={onChange}
             placeholder="email address"

@@ -4,7 +4,7 @@ const Table = ({ departures }) => {
   return (
     <React.Fragment>
       <div className="table-container">
-        <div className="departure-signage">Departure</div>
+        <div className="departure-signage">Departures</div>
         <table cellSpacing="0" className="departure-table">
           <thead>
             <tr className="header">

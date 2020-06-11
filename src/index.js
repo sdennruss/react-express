@@ -4,9 +4,13 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import "font-awesome/css/font-awesome.css";
+import logger from "./components/sentry/logService";
+
+logger.init();
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter forceRefresh={true}>
     <App />
   </BrowserRouter>,
   document.getElementById("root")

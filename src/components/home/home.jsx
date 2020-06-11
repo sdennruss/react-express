@@ -1,8 +1,17 @@
 import React from "react";
 import Cards from "./cards";
 import DepartureTable from "../table/departureTable";
+import RegisterForm from "../register/register";
 
-const Home = ({ departures }) => {
+const Home = ({
+  departures,
+  data,
+  errors,
+  history,
+  onSubmit,
+  onChange,
+  onValidation,
+}) => {
   return (
     <React.Fragment>
       <div className="home-container">
@@ -11,6 +20,14 @@ const Home = ({ departures }) => {
       </div>
       <DepartureTable departures={departures} />
       <Cards />
+      <RegisterForm
+        onSubmit={onSubmit}
+        onChange={onChange}
+        onValidation={onValidation}
+        data={data}
+        errors={errors}
+        history={history}
+      />
     </React.Fragment>
   );
 };

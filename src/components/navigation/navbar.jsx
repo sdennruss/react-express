@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = ({ navigations }) => {
+  const [navClass, setNavClass] = useState();
   return (
     <React.Fragment>
       <div className="navigation-container">
@@ -10,7 +11,11 @@ const NavBar = ({ navigations }) => {
             <nav>
               <ul className="unordered-items">
                 <li className={`listed-${navigation}`} key={navigation}>
-                  <Link to={`/${navigation}`} className="linked-items">
+                  <Link
+                    onMouseOver={() => setNavClass(`linked-${navigation}`)}
+                    to={`/${navigation}`}
+                    className={navClass}
+                  >
                     {navigation}
                   </Link>
                 </li>
